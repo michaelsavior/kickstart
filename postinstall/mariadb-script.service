@@ -1,0 +1,13 @@
+[Unit]
+Description=Setup_mariadb_script
+After=mariadb.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /opt/mariadb/setpassword.sh
+ExecStart=/bin/bash /opt/mariadb/mariadb.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
+
